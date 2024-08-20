@@ -1,0 +1,1 @@
+Inativação da Loja Online
