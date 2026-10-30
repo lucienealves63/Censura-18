@@ -24,13 +24,24 @@ Página publicada no GitHub Pages com o catálogo **Mais Vendidos de Outubro** d
 
 ## Publicação
 
-O GitHub Pages publica a partir da branch `main`. Qualquer alteração passa por um pull request
-antes de ir ao ar.
+O site fica em **https://lucienealves63.github.io/Censura-18/** e é publicado pelo workflow
+[`.github/workflows/pages.yml`](.github/workflows/pages.yml) a cada push na `main`:
 
-A raiz do site (`https://lucienealves63.github.io/Censura-18/`) não possui `index.html`;
-a página é acessada pelo link direto do arquivo:
+- o Pages está configurado no modo **GitHub Actions** (`build_type: workflow`), então nenhum build
+  é executado — o repositório é apenas empacotado (`actions/upload-pages-artifact`) e publicado
+  (`actions/deploy-pages`);
+- o environment `github-pages` aceita deploy **somente da branch `main`**;
+- dá para disparar manualmente em **Actions → Deploy GitHub Pages → Run workflow**.
 
-`https://lucienealves63.github.io/Censura-18/Encerramento%20do%20site%20C18.html`
+`index.html` é a porta de entrada: redireciona na hora (meta refresh + `location.replace`) para
+`Encerramento do site C18.html`, com botão de fallback caso o redirecionamento esteja bloqueado.
+
+Links:
+
+- raiz (com redirect): https://lucienealves63.github.io/Censura-18/
+- catálogo direto: https://lucienealves63.github.io/Censura-18/Encerramento%20do%20site%20C18.html
+
+Toda alteração passa por um pull request antes de ir ao ar.
 
 ## Como atualizar o catálogo
 
