@@ -247,11 +247,15 @@ body { background: #e8e8e8; }
 #p30 .cta-link {
 	position: absolute;
 	left: 17%;
-	top: 67.2%;
+	top: 66.8%;
 	width: 66%;
-	height: 12%;
+	height: 12.8%;
 	z-index: 3;
+	display: block;
 	border-radius: 12px;
+	cursor: pointer;
+	touch-action: manipulation;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, .15);
 	transition: box-shadow .15s ease, background-color .15s ease;
 }
 #p30 .cta-link:hover,
@@ -272,13 +276,59 @@ body { background: #e8e8e8; }
 	border: 0;
 }
 
+/* Botão real e visível abaixo da última página: não depende de hit-testing sobre a imagem.
+   Mesma linguagem visual do CTA da arte (pill marrom + branco). */
+.cta-final {
+	margin: 28px auto 40px;
+	padding: 0 16px;
+	max-width: 560px;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.cta-final a {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+	padding: 18px 30px;
+	border-radius: 16px;
+	background: #4a3323;
+	color: #fff;
+	font-size: 15px;
+	font-weight: 700;
+	letter-spacing: .06em;
+	text-transform: uppercase;
+	text-decoration: none;
+	line-height: 1.35;
+	box-shadow: 0 6px 18px rgba(0, 0, 0, .18);
+	touch-action: manipulation;
+}
+.cta-final a:hover,
+.cta-final a:focus-visible {
+	background: #5d412d;
+	box-shadow: 0 8px 22px rgba(0, 0, 0, .26);
+	outline: 3px solid #fff;
+	outline-offset: 3px;
+}
+.cta-final .url {
+	font-size: 13px;
+	font-weight: 400;
+	letter-spacing: .02em;
+	text-transform: none;
+	opacity: .85;
+}
+@media screen and (max-width: 820px) {
+	.cta-final a { width: 100%; padding: 16px 18px; }
+}
+
 /* Print / PDF round-trip: one source page per printed page, no chrome margins or shadow.
    The exact paper size is pinned by a generated @page rule when all pages share one size. */
 @media print {
 	body { background: #fff; }
-	.toc, .thumbs { display: none; }
+	.toc, .thumbs, .cta-final { display: none; }
 	.page { margin: 0; box-shadow: none; break-after: page; }
-	.page:last-child { break-after: auto; }
+	/* last-of-type (e nao last-child): depois da ultima pagina vem o bloco .cta-final na tela */
+	.page:last-of-type { break-after: auto; }
 }
 @page{size:793.6px 1122.56px;margin:0}
 </style>
@@ -472,5 +522,12 @@ body { background: #e8e8e8; }
 
 <a class="cta-link" href="https://censura18.my.canva.site/c18" target="_blank" rel="noopener noreferrer" aria-label="Acesse já o nosso link: censura18.my.canva.site/c18"><span class="sr-only">Acesse já o nosso link: censura18.my.canva.site/c18</span></a>
 </div>
+
+<section class="cta-final">
+	<a href="https://censura18.my.canva.site/c18" target="_blank" rel="noopener noreferrer">
+		<span>Acesse já o nosso link</span>
+		<span class="url">censura18.my.canva.site/c18</span>
+	</a>
+</section>
 </body>
 </html>

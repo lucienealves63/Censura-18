@@ -16,9 +16,10 @@ Página publicada no GitHub Pages com o catálogo **Mais Vendidos de Outubro** d
 - **Nome do arquivo mantido** de propósito, para preservar a URL já divulgada.
 - **Responsiva:** abaixo de 820 px de largura cada página ocupa 100% da tela e a imagem escala
   junto (proporção 793,6:1122,56), sem necessidade de pinçar ou dar zoom.
-- **Link na última página:** o bloco "Acesse já o nosso link" tem uma área clicável sobre a imagem
-  que leva a `https://censura18.my.canva.site/c18` (com `aria-label`, foco visível e área de toque
-  de 66% da largura da página).
+- **Link na última página:** o bloco "Acesse já o nosso link" tem uma área clicável sobre a imagem e,
+  logo abaixo da última página, um botão real e visível (mesma linguagem visual da campanha) que leva a
+  `https://censura18.my.canva.site/c18` — com `aria-label`, foco visível e área de toque de 66% da
+  largura da página no modo responsivo.
 - **Carregamento leve:** apenas a primeira página é carregada imediatamente
   (`loading="eager" fetchpriority="high"`); as demais usam `loading="lazy" decoding="async"`.
 
