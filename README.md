@@ -14,6 +14,13 @@ Página publicada no GitHub Pages com o catálogo **Mais Vendidos de Outubro** d
   então a página funciona offline e não quebra se um servidor de imagens sair do ar.
 - **Sem build:** é um único arquivo HTML estático, servido diretamente pelo GitHub Pages.
 - **Nome do arquivo mantido** de propósito, para preservar a URL já divulgada.
+- **Responsiva:** abaixo de 820 px de largura cada página ocupa 100% da tela e a imagem escala
+  junto (proporção 793,6:1122,56), sem necessidade de pinçar ou dar zoom.
+- **Link na última página:** o bloco "Acesse já o nosso link" tem uma área clicável sobre a imagem
+  que leva a `https://censura18.my.canva.site/c18` (com `aria-label`, foco visível e área de toque
+  de 66% da largura da página).
+- **Carregamento leve:** apenas a primeira página é carregada imediatamente
+  (`loading="eager" fetchpriority="high"`); as demais usam `loading="lazy" decoding="async"`.
 
 ## Publicação
 
