@@ -1,1 +1,32 @@
-Inativação da Loja Online Censura 18 
+# Censura 18
+
+Página publicada no GitHub Pages com o catálogo **Mais Vendidos de Outubro** da Censura 18.
+
+## Conteúdo
+
+- `Encerramento do site C18.html` — página principal: catálogo "Mais Vendidos de Outubro" em 31 páginas
+  (campanha publicada originalmente em PDF).
+
+## Características
+
+- **Autônoma:** todas as 31 páginas estão embutidas como imagens JPEG em base64.
+  Não há dependências externas (sem CDN, fontes remotas ou imagens hospedadas em terceiros),
+  então a página funciona offline e não quebra se um servidor de imagens sair do ar.
+- **Sem build:** é um único arquivo HTML estático, servido diretamente pelo GitHub Pages.
+- **Nome do arquivo mantido** de propósito, para preservar a URL já divulgada.
+
+## Publicação
+
+O GitHub Pages publica a partir da branch `main`. Qualquer alteração passa por um pull request
+antes de ir ao ar.
+
+A raiz do site (`https://lucienealves63.github.io/Censura-18/`) não possui `index.html`;
+a página é acessada pelo link direto do arquivo:
+
+`https://lucienealves63.github.io/Censura-18/Encerramento%20do%20site%20C18.html`
+
+## Como atualizar o catálogo
+
+1. Gere a nova versão do catálogo em HTML (por exemplo, a partir do PDF da campanha).
+2. Substitua o conteúdo de `Encerramento do site C18.html`, mantendo as imagens embutidas em base64.
+3. Ajuste o `<title>`, faça commit e abra um pull request para a `main`.
