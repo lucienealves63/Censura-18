@@ -1,0 +1,42 @@
+name: Deploy GitHub Pages
+
+# Publica o catálogo estático no GitHub Pages.
+# O Pages deste repositório está configurado como "GitHub Actions" (build_type: workflow),
+# então este workflow é o responsável por gerar o artefato e publicá-lo.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Nunca cancela uma publicação em andamento; mantém uma fila por vez.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages # o environment só aceita deploys da branch main
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+
+      # Publica o repositório como site estático (sem build). O .git é ignorado pelo action.
+      - name: Empacotar site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v4
