@@ -26,7 +26,16 @@ Página publicada no GitHub Pages com a campanha **Black Friday** da Censura 18.
 
 ## Publicação
 
-O site fica em **https://lucienealves63.github.io/Censura-18/** e é publicado pelo workflow
+O site fica em **https://censura18.com.br/** — domínio próprio que aponta para o
+repositório **`Censura18/Censura18`** (conta/organização `Censura18`, GitHub Pages com
+`CNAME: censura18.com.br`). Este repositório também publica uma cópia em
+**https://lucienealves63.github.io/Censura-18/**.
+
+> **Atenção:** os dois repositórios são publicações independentes. A cada atualização de
+> campanha, copie `index.html` e a pasta `assets/` também para o repositório
+> `Censura18/Censura18`, senão o `censura18.com.br` continua exibindo a campanha antiga.
+
+A publicação em `lucienealves63.github.io/Censura-18` é feita pelo workflow
 [`.github/workflows/pages.yml`](.github/workflows/pages.yml) a cada push na `main`:
 
 - o Pages está configurado no modo **GitHub Actions** (`build_type: workflow`), então nenhum build
@@ -37,7 +46,8 @@ O site fica em **https://lucienealves63.github.io/Censura-18/** e é publicado p
 
 Links:
 
-- raiz: https://lucienealves63.github.io/Censura-18/
+- site principal (domínio próprio): https://censura18.com.br/
+- cópia no GitHub Pages: https://lucienealves63.github.io/Censura-18/
 - URL já divulgada: https://lucienealves63.github.io/Censura-18/Encerramento%20do%20site%20C18.html
 
 Toda alteração passa por um pull request antes de ir ao ar.
@@ -51,4 +61,6 @@ Toda alteração passa por um pull request antes de ir ao ar.
    (as duas páginas devem continuar com o mesmo conteúdo), o `<title>` e este README.
 4. Se a arte final mudar, meça de novo a posição do pill "ACESSE JÁ O NOSSO LINK" e ajuste
    `left/top/width/height` de `.cta-link` e `.cta-ring`.
-5. Faça commit e abra um pull request para a `main`.
+5. **Sincronize o site do domínio:** copie `index.html` e `assets/` para o repositório
+   `Censura18/Censura18` (é ele que o `censura18.com.br` exibe).
+6. Faça commit e abra um pull request para a `main`.
